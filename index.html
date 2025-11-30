@@ -4,20 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rifa iPhone 17 Pro Max</title>
-  <meta
-    name="description"
-    content="Rifa oficial de un iPhone 17 Pro Max azul profundo, nuevo. Solo 200 boletos disponibles, pagos verificados manualmente y consulta de estado de tu boleto en línea."
-  />
   <style>
     :root {
-      --azul-oscuro: #020617;           /* fondo muy oscuro tipo noche */
-      --azul: #1d4ed8;                  /* azul metal iPhone */
-      --azul-claro: #38bdf8;            /* acentos */
-      --dorado: #fbbf24;                /* acento dorado */
+      --azul-oscuro: #020617;
+      --azul: #1d4ed8;
+      --azul-intermedio: #0f172a;
+      --dorado: #fbbf24;
       --gris-fondo: #020617;
-      --rojo: #e02424;
-      --verde: #10b981;
-      --negro: #0f172a;
+      --rojo: #ef4444;
+      --verde: #22c55e;
+      --texto-principal: #e5e7eb;
+      --texto-secundario: #9ca3af;
+      --borde-card: rgba(148, 163, 184, 0.24);
     }
 
     * {
@@ -27,121 +25,98 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #e5e7eb;
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.35), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(56,189,248,0.25), transparent 60%),
-        linear-gradient(180deg, #020617 0%, #020617 40%, #020617 100%);
-      min-height: 100vh;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+      color: var(--texto-principal);
     }
 
+    /* HEADER */
     header {
-      background: linear-gradient(90deg, #020617, #111827, #1d4ed8);
+      background: linear-gradient(90deg, #020617, #0f172a, #111827);
       color: white;
-      padding: 18px 20px;
+      padding: 18px 20px 16px;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
       position: sticky;
       top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background-color: rgba(2, 6, 23, 0.92);
     }
 
     header h1 {
       margin: 0;
       font-size: 1.6rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     header p {
       margin: 6px 0 0;
-      font-size: 0.9rem;
-      opacity: 0.9;
+      font-size: 0.92rem;
+      color: var(--texto-secundario);
     }
 
+    /* LAYOUT GENERAL */
     main {
-      max-width: 1100px;
-      margin: 28px auto 40px;
+      max-width: 1120px;
+      margin: 24px auto 40px;
       padding: 0 16px 40px;
     }
 
-    /* HERO PRINCIPAL */
-
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 32px;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 28px;
       align-items: center;
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.33), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(15,118,110,0.3), transparent 55%),
-        linear-gradient(135deg, #020617, #020617, #020617);
+      background: radial-gradient(circle at top left, #1f2937 0, #020617 55%);
       border-radius: 24px;
-      padding: 26px 28px;
+      padding: 26px 26px 22px;
+      border: 1px solid var(--borde-card);
       box-shadow:
-        0 22px 45px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(148, 163, 184, 0.3);
+        0 22px 55px rgba(15, 23, 42, 0.75),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
       margin-bottom: 26px;
-      border: 1px solid rgba(37, 99, 235, 0.45);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(59,130,246,0.3), transparent 60%);
-      opacity: 0.65;
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }
-
-    .hero > * {
-      position: relative;
-      z-index: 1;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(251, 191, 36, 0.12);
+      background: rgba(250, 204, 21, 0.12);
       color: var(--dorado);
-      padding: 4px 12px;
+      padding: 5px 12px;
       border-radius: 999px;
       font-size: 0.78rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      border: 1px solid rgba(251, 191, 36, 0.5);
-      backdrop-filter: blur(8px);
+    }
+
+    .badge span {
+      font-size: 0.9rem;
     }
 
     .hero h2 {
-      margin: 14px 0 8px;
-      font-size: 1.9rem;
+      margin: 12px 0 8px;
+      font-size: 1.7rem;
       color: #e5e7eb;
     }
 
     .hero-subtitle {
-      margin: 0 0 18px;
-      color: #cbd5f5;
+      margin: 0 0 14px;
+      color: var(--texto-secundario);
       font-size: 0.98rem;
-      max-width: 480px;
+      max-width: 30rem;
     }
 
     .price-highlight {
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #e5e7eb;
+      margin-bottom: 8px;
     }
 
     .price-highlight span {
       color: var(--verde);
-      font-size: 1.05rem;
     }
 
     .details-list {
@@ -149,16 +124,16 @@
       padding: 0;
       margin: 0 0 18px;
       font-size: 0.9rem;
-      color: #e5e7eb;
+      color: var(--texto-secundario);
     }
 
     .details-list li {
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .details-list li::before {
       content: "• ";
-      color: var(--azul-claro);
+      color: var(--azul);
       font-weight: bold;
     }
 
@@ -169,90 +144,87 @@
       align-items: center;
     }
 
-    @keyframes pulse {
-      0% { transform: translateY(0) scale(1); box-shadow: 0 0 0 0 rgba(251,191,36,0.4); }
-      70% { transform: translateY(-1px) scale(1.02); box-shadow: 0 0 0 12px rgba(251,191,36,0); }
-      100% { transform: translateY(0) scale(1); box-shadow: 0 0 0 0 rgba(251,191,36,0); }
-    }
-
     .btn-primary {
-      background: linear-gradient(135deg, #facc15, #fbbf24, #f97316);
+      background: radial-gradient(circle at top left, #facc15, #f97316);
       color: #111827;
       border: none;
       border-radius: 999px;
       padding: 10px 22px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
       text-decoration: none;
-      font-size: 0.96rem;
-      box-shadow: 0 14px 30px rgba(248, 180, 0, 0.45);
-      transition: transform 0.08s ease, box-shadow 0.12s ease;
-      white-space: nowrap;
-      animation: pulse 2.4s infinite;
+      font-size: 0.95rem;
+      box-shadow: 0 18px 40px rgba(251, 191, 36, 0.55);
+      transition:
+        transform 0.08s ease,
+        box-shadow 0.12s ease,
+        filter 0.1s ease;
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px) scale(1.02);
-      box-shadow: 0 18px 40px rgba(248, 180, 0, 0.6);
+      transform: translateY(-1px);
+      box-shadow: 0 22px 50px rgba(251, 191, 36, 0.75);
+      filter: brightness(1.02);
     }
 
     .cta-note {
       font-size: 0.82rem;
-      color: #cbd5f5;
+      color: var(--texto-secundario);
       max-width: 260px;
     }
 
     .hero-img-wrapper {
       display: flex;
       justify-content: center;
-      align-items: center;
     }
 
     .hero-img {
-      max-width: 280px;
-      border-radius: 32px;
-      padding: 18px;
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.9), rgba(30,64,175,1)),
-        radial-gradient(circle at bottom right, rgba(15,23,42,1), #020617);
+      max-width: 270px;
+      border-radius: 26px;
+      overflow: hidden;
+      padding: 18px 18px 12px;
+      background: radial-gradient(circle at top, #1d4ed8 0, #020617 60%);
       box-shadow:
-        0 25px 50px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(148, 163, 184, 0.4);
+        0 20px 50px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(37, 99, 235, 0.4);
       position: relative;
     }
 
-    .hero-img::after {
-      content: "";
+    .hero-img::before {
+      content: "Premio real";
       position: absolute;
-      inset: 10px;
+      top: 10px;
+      right: 14px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 3px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(191, 219, 254, 0.4);
-      opacity: 0.7;
-      pointer-events: none;
+      background: rgba(15, 23, 42, 0.75);
+      color: var(--texto-secundario);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      backdrop-filter: blur(4px);
     }
 
     .hero-img img {
       display: block;
       width: 100%;
-      border-radius: 24px;
+      border-radius: 18px;
     }
 
-    /* TARJETAS GENERALES */
-
+    /* CARDS GENERALES */
     .card {
-      background: #020617;
-      border-radius: 18px;
-      padding: 20px 22px;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border-radius: 20px;
+      padding: 18px 20px 16px;
       margin-bottom: 18px;
-      box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.85),
-        0 0 0 1px rgba(30, 64, 175, 0.45);
-      border: 1px solid rgba(30, 64, 175, 0.4);
+      border: 1px solid var(--borde-card);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
     }
 
     .card h3 {
       margin-top: 0;
-      font-size: 1.12rem;
+      font-size: 1.06rem;
       color: #e5e7eb;
       display: flex;
       align-items: center;
@@ -260,31 +232,20 @@
     }
 
     .card h3 span {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .card p {
       margin: 6px 0;
       font-size: 0.9rem;
-      color: #cbd5f5;
+      color: var(--texto-secundario);
     }
 
     .card ul {
       margin: 8px 0;
       padding-left: 18px;
       font-size: 0.9rem;
-      color: #cbd5f5;
-    }
-
-    .methods-list a {
-      color: #93c5fd;
-      text-decoration: none;
-      font-weight: 600;
-      word-break: break-all;
-    }
-
-    .methods-list a:hover {
-      text-decoration: underline;
+      color: var(--texto-secundario);
     }
 
     .tag {
@@ -293,50 +254,14 @@
       border-radius: 999px;
       font-size: 0.75rem;
       font-weight: 600;
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(148, 163, 184, 0.16);
       color: #e5e7eb;
       margin-left: 4px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
-    .good-luck {
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(52, 211, 153, 0.45);
-      font-size: 0.88rem;
-      color: #6ee7b7;
-    }
-
-    .info-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 8px 0;
-      font-size: 0.9rem;
-      color: #cbd5f5;
-    }
-
-    .info-list li {
-      margin-bottom: 4px;
-      display: flex;
-      gap: 6px;
-      align-items: flex-start;
-    }
-
-    .info-bullet {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #38bdf8;
-      margin-top: 6px;
-      flex-shrink: 0;
-    }
-
-    /* BARRA DE PROGRESO Y BOLETOS */
-
+    /* PROGRESO Y BOLETOS */
     .progress-wrapper {
       margin-top: 10px;
     }
@@ -345,78 +270,78 @@
       width: 100%;
       height: 14px;
       border-radius: 999px;
-      background: #020617;
+      background: rgba(15, 23, 42, 0.9);
       overflow: hidden;
       position: relative;
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      border: 1px solid rgba(55, 65, 81, 0.9);
     }
 
     .progress-fill {
       height: 100%;
       width: 0;
-      background: linear-gradient(90deg, #10b981, #22c55e, #a3e635);
+      background: linear-gradient(90deg, #22c55e, #4ade80, #a3e635);
       transition: width 0.4s ease-out;
     }
 
     .progress-text {
-      margin-top: 6px;
+      margin-top: 7px;
       font-size: 0.85rem;
-      color: #cbd5f5;
+      color: var(--texto-secundario);
     }
 
     .tickets-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
       gap: 6px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .ticket {
       border-radius: 10px;
       padding: 6px 0;
       text-align: center;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       cursor: pointer;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid rgba(55, 65, 81, 0.9);
       background: #020617;
+      color: #e5e7eb;
       transition:
         background 0.12s ease,
-        transform 0.05s ease,
-        box-shadow 0.12s ease,
-        color 0.12s ease,
-        border-color 0.12s ease;
-      color: #e5e7eb;
+        transform 0.06s ease,
+        box-shadow 0.1s ease,
+        border-color 0.12s ease,
+        color 0.12s ease;
     }
 
     .ticket:hover {
       transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.8);
-      border-color: #60a5fa;
-      background: #020617;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.85);
+      border-color: #2563eb;
     }
 
     .ticket.sold {
-      background: rgba(239, 68, 68, 0.12);
-      color: #fecaca;
-      border-color: #fca5a5;
+      background: rgba(239, 68, 68, 0.08);
+      color: #fca5a5;
+      border-color: rgba(248, 113, 113, 0.7);
       cursor: not-allowed;
       box-shadow: none;
     }
 
     .ticket.selected {
-      background: rgba(37, 99, 235, 0.12);
+      background: rgba(37, 99, 235, 0.22);
       border-color: #60a5fa;
-      color: #bfdbfe;
+      color: #e5e7eb;
       font-weight: 600;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.8);
     }
 
     .ticket-legend {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
       font-size: 0.8rem;
-      margin-top: 10px;
-      color: #cbd5f5;
+      margin-top: 12px;
+      color: var(--texto-secundario);
     }
 
     .legend-item {
@@ -429,22 +354,31 @@
       width: 14px;
       height: 14px;
       border-radius: 4px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      border: 1px solid rgba(55, 65, 81, 0.9);
       background: #020617;
     }
 
     .legend-box.sold {
-      background: rgba(239, 68, 68, 0.12);
-      border-color: #fca5a5;
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(248, 113, 113, 0.85);
     }
 
     .legend-box.selected {
-      background: rgba(37, 99, 235, 0.12);
+      background: rgba(37, 99, 235, 0.4);
       border-color: #60a5fa;
     }
 
-    /* FORMULARIOS */
+    .good-luck {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(22, 163, 74, 0.14);
+      border: 1px solid rgba(74, 222, 128, 0.5);
+      font-size: 0.88rem;
+      color: #bbf7d0;
+    }
 
+    /* FORMULARIOS */
     .fields-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -466,7 +400,7 @@
 
     .field input {
       border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(55, 65, 81, 0.9);
       padding: 8px 10px;
       font-size: 0.9rem;
       outline: none;
@@ -474,14 +408,18 @@
       color: #e5e7eb;
     }
 
+    .field input::placeholder {
+      color: #6b7280;
+    }
+
     .field input:focus {
-      border-color: #60a5fa;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.6);
     }
 
     .small-note {
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: var(--texto-secundario);
       margin-top: 8px;
     }
 
@@ -494,30 +432,38 @@
 
     .verifier-form input {
       flex: 1;
-      min-width: 180px;
+      min-width: 190px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(55, 65, 81, 0.9);
       padding: 8px 12px;
       font-size: 0.9rem;
       background: #020617;
       color: #e5e7eb;
     }
 
+    .verifier-form input::placeholder {
+      color: #6b7280;
+    }
+
     .btn-secondary {
       border-radius: 999px;
-      border: 1px solid #60a5fa;
+      border: 1px solid #e5e7eb;
       background: transparent;
       color: #e5e7eb;
       padding: 8px 16px;
       font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
+      transition:
+        background 0.1s ease,
+        color 0.1s ease,
+        border-color 0.1s ease;
     }
 
     .btn-secondary:hover {
-      background: #1d4ed8;
-      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.65);
+      background: #e5e7eb;
+      color: #020617;
+      border-color: #e5e7eb;
     }
 
     .ticket-result {
@@ -527,9 +473,9 @@
 
     .ticket-card {
       border-radius: 16px;
-      border: 1px dashed rgba(148, 163, 184, 0.7);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
       padding: 12px 14px;
-      background: #020617;
+      background: radial-gradient(circle at top left, #020617, #020617);
     }
 
     .ticket-card-header {
@@ -545,38 +491,53 @@
       color: #4ade80;
     }
 
-    .ticket-status-pending {
-      color: #fbbf24;
+    /* INFO Y SOPORTE */
+    .info-list {
+      margin: 8px 0;
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: var(--texto-secundario);
     }
 
-    /* INFO Y FOOTER */
+    .info-list li {
+      margin-bottom: 3px;
+    }
 
     footer {
       text-align: center;
       font-size: 0.75rem;
-      color: #9ca3af;
+      color: #6b7280;
       padding: 16px;
+      border-top: 1px solid rgba(31, 41, 55, 0.85);
+      background: #020617;
     }
 
-    /* RESPONSIVE */
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
-        padding: 20px 18px;
+        padding: 20px 18px 18px;
       }
       .hero-img-wrapper {
         order: -1;
       }
       header h1 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Rifa iPhone 17 Pro Max</h1>
+    <h1>RIFA IPHONE 17 PRO MAX</h1>
     <p>Un solo ganador · Boletos limitados · Rifa gestionada de forma manual</p>
   </header>
 
@@ -584,7 +545,9 @@
     <!-- HERO -->
     <section class="hero">
       <div>
-        <div class="badge">🎉 Rifa oficial · Solo 200 boletos</div>
+        <div class="badge">
+          <span>🎟️</span> RIFA OFICIAL · SOLO 200 BOLETOS
+        </div>
         <h2>iPhone 17 Pro Max · Azul profundo · Sellado</h2>
         <p class="hero-subtitle">
           Participa con solo <strong>10 USD</strong> por boleto y llévate un
@@ -601,8 +564,8 @@
           <li>La rifa inicia el <strong>día 3</strong> y termina el
             <strong>día 15</strong>.</li>
           <li>El ganador se define con la
-            <strong>lotería de la noche</strong> y se anunciará también por
-            <strong>redes sociales oficiales</strong>.</li>
+            <strong>lotería de la noche</strong> y se anunciará también por redes sociales oficiales.
+          </li>
           <li>Encargado de la rifa:
             <strong>Daniel Estrada</strong>.
           </li>
@@ -613,14 +576,14 @@
             Ver números disponibles
           </a>
           <span class="cta-note">
-            Elige tu número, realiza el pago y envía tu captura por WhatsApp.
+            Elige tu número, realiza el pago y envía tu captura por WhatsApp para registrar tu boleto.
           </span>
         </div>
       </div>
 
       <div class="hero-img-wrapper">
         <div class="hero-img">
-          <!-- Asegúrate de subir esta imagen al repositorio con este nombre -->
+          <!-- IMPORTANTE: el nombre del archivo debe coincidir con el que subiste al repositorio -->
           <img
             src="iphone17pro-azul.jpg"
             alt="iPhone 17 Pro Max azul profundo"
@@ -631,7 +594,7 @@
 
     <!-- DETALLES DEL PREMIO -->
     <section class="card">
-      <h3><span>📱</span> Detalles del premio</h3>
+      <h3><span>📦</span> Detalles del premio</h3>
       <p>
         <strong>Marca:</strong> Apple<br />
         <strong>Modelo:</strong> iPhone 17 Pro Max<br />
@@ -668,86 +631,38 @@
 
       <div class="good-luck">
         🍀 <strong>Mensaje especial:</strong> Gracias por confiar en esta rifa.
-        Deseamos que tu número sea el ganador. ¡Participa con fe y mucha suerte!
+        Deseamos que tu número sea el ganador. Participa con fe, responsabilidad y mucha suerte.
       </div>
     </section>
 
-    <!-- INFORMACIÓN IMPORTANTE Y POLÍTICAS -->
+    <!-- INFORMACIÓN IMPORTANTE / POLÍTICAS -->
     <section class="card">
-      <h3><span>📋</span> Información importante y políticas</h3>
+      <h3><span>ℹ️</span> Información importante</h3>
       <ul class="info-list">
-        <li>
-          <span class="info-bullet"></span>
-          <span>
-            Los pagos y confirmaciones se gestionan de forma manual por el equipo
-            organizador. El estado de cada boleto se actualiza en esta página
-            cuando el pago ha sido verificado.
-          </span>
-        </li>
-        <li>
-          <span class="info-bullet"></span>
-          <span>
-            Es obligatorio enviar el comprobante de pago por WhatsApp junto con
-            tu nombre completo y el número de boleto que elegiste.
-          </span>
-        </li>
-        <li>
-          <span class="info-bullet"></span>
-          <span>
-            Si el pago no se puede verificar o está incompleto, el número puede
-            volver a quedar disponible para otro participante.
-          </span>
-        </li>
-        <li>
-          <span class="info-bullet"></span>
-          <span>
-            Una vez que tu boleto aparece como <strong>Pago verificado</strong>,
-            se considera confirmado para la rifa correspondiente a las fechas
-            indicadas en esta página.
-          </span>
-        </li>
-        <li>
-          <span class="info-bullet"></span>
-          <span>
-            En caso de que no se alcancen las condiciones mínimas establecidas
-            por el organizador (por ejemplo, cantidad de boletos vendidos), la
-            rifa podrá reprogramarse o cancelarse. En ese caso, se informará a
-            los participantes por los canales de contacto registrados.
-          </span>
-        </li>
-        <li>
-          <span class="info-bullet"></span>
-          <span>
-            Al participar en esta rifa aceptas estas condiciones y autorizas el
-            uso de tus datos de contacto únicamente para la gestión de esta
-            rifa y la comunicación relacionada con el resultado.
-          </span>
-        </li>
+        <li>Los pagos y confirmaciones se gestionan de forma manual por el equipo organizador.</li>
+        <li>Es obligatorio enviar el comprobante de pago por WhatsApp para registrar el boleto.</li>
+        <li>En caso de cualquier duda, puedes comunicarte al WhatsApp o correo de soporte indicado al final de la página.</li>
+        <li>La participación en la rifa implica la aceptación de estas condiciones y políticas.</li>
       </ul>
-
-      <p class="small-note">
-        ⚠ Esta página es informativa y el manejo de la rifa debe cumplir con las
-        normas y regulaciones vigentes del país o estado donde se realiza.
-      </p>
     </section>
 
     <!-- MÉTODOS DE PAGO -->
-    <section class="card methods-list">
+    <section class="card">
       <h3><span>💳</span> Métodos de pago</h3>
 
       <p><strong>Zelle</strong> <span class="tag">TRANSFERENCIA</span><br />
-  Titular: Jarlin Infante<br />
-  Teléfono: +1 (302) 893-6554
-</p>
+        Titular: Jarlin Infante<br />
+        Teléfono: +1 (302) 893-6554
+      </p>
 
-      <p><strong>Cash App</strong> <span class="tag">Enlace directo</span><br />
+      <p><strong>Cash App</strong> <span class="tag">ENLACE DIRECTO</span><br />
         Link:
         <a href="https://cash.app/$wellington0" target="_blank">
           https://cash.app/$wellington0
         </a>
       </p>
 
-      <p><strong>PayPal</strong> <span class="tag">Enlace directo</span><br />
+      <p><strong>PayPal</strong> <span class="tag">ENLACE DIRECTO</span><br />
         Link:
         <a href="https://www.paypal.me/AssanCruz636" target="_blank">
           https://www.paypal.me/AssanCruz636
@@ -850,7 +765,7 @@
         <input
           id="verify-input"
           type="text"
-          placeholder="Ej: +1 267 336 8849 o 43"
+          placeholder="Ej: +1 302 893 6554 o 43"
         />
         <button type="submit" class="btn-secondary">Buscar</button>
       </form>
@@ -860,45 +775,44 @@
 
     <!-- INFORMACIÓN Y SOPORTE -->
     <section class="card">
-      <h3><span>📩</span> Información y soporte</h3>
+      <h3><span>💬</span> Información y soporte</h3>
       <p>
         Para cualquier duda sobre la rifa, verificación de pagos o soporte,
-        puedes comunicarte directamente con el equipo organizador:
+        puedes comunicarte directamente con el equipo organizador.
       </p>
       <p>
-  <strong>Correo electrónico:</strong>
-  <a href="mailto:rifaoficiales@outlook.com">rifaoficiales@outlook.com</a><br />
-  <strong>WhatsApp (Jarlin Infante):</strong>
-  <a href="https://wa.me/13028936554" target="_blank">+1 (302) 893-6554</a>
-</p>
-
+        <strong>Correo electrónico:</strong>
+        <a href="mailto:rifaoficiales@outlook.com">rifaoficiales@outlook.com</a><br />
+        <strong>WhatsApp (Jarlin Infante):</strong>
+        <a href="https://wa.me/13028936554" target="_blank">+1 (302) 893-6554</a>
+      </p>
       <p class="small-note">
         El responsable de la rifa es <strong>Daniel Estrada</strong>.<br />
-        Esta página es informativa; los pagos y la verificación de boletos se
-        realizan de forma manual por el equipo encargado.
+        Esta página es informativa; los pagos y la verificación de boletos se realizan de forma manual por el equipo encargado.
       </p>
     </section>
   </main>
 
   <footer>
-    Rifa iPhone 17 Pro Max · Página informativa · Manejo manual de boletos.
+    Rifa iPhone 17 Pro Max · Página informativa · Manejo manual de boletos. Soporte:
+    rifaoficiales@outlook.com · WhatsApp: +1 (302) 893-6554
   </footer>
 
   <script>
     const TOTAL_TICKETS = 200;
 
-    // Aquí se registran los boletos vendidos de forma manual.
-    // Ejemplo de objeto dentro del arreglo:
+    // 🧾 Aquí irán los boletos con pago verificado.
+    // Ejemplo de estructura de un comprador:
     // {
     //   ticket: 25,
     //   name: "Juan Pérez",
-    //   phone: "+1 267 336 8849",
+    //   phone: "+1 302 000 0000",
     //   email: "correo@ejemplo.com",
     //   method: "PayPal",
-    //   verifiedAt: "2025-11-28 14:34:15"
+    //   verifiedAt: "2025-11-30 14:34:15"
     // }
     const buyers = [
-      // agrega aquí los boletos verificados
+      // Agrega aquí los boletos verificados de forma manual
     ];
 
     const ticketsContainer = document.getElementById("tickets-container");
@@ -917,10 +831,6 @@
 
     function getSoldTicketNumbers() {
       return buyers.map((b) => b.ticket);
-    }
-
-    function isSold(num) {
-      return getSoldTicketNumbers().includes(num);
     }
 
     function renderTickets() {
@@ -1004,8 +914,8 @@
         "Adjunto mi comprobante de pago.\n\n" +
         "🍀 Gracias, quedo pendiente de la confirmación de mi número.";
 
-      // Número de WhatsApp del encargado SIN signos, solo números
-      const whatsappNumber = "13028936554"; // +1 267 336 8849
+      // Número de WhatsApp del encargado (solo números, sin + ni espacios)
+      const whatsappNumber = "13028936554"; // +1 302 893 6554
 
       const url =
         "https://wa.me/" +

@@ -999,6 +999,26 @@
 
     renderTickets();
     updateProgress();
-  </script>
+  </script> 
+  <script>
+  // Enlace de la hoja de Google Sheets en formato CSV
+  const csvUrl = 'https://docs.google.com/spreadsheets/d/1clD0HPAgiKKFXsB_o0kCOtAb4K3cV8lg8k3vvEGX7uc/gviz/tq?tqx=out:csv';
+
+  // Aquí usamos fetch para traer los datos y procesarlos
+  fetch(csvUrl)
+    .then(response => response.text())
+    .then(data => {
+      // Aquí puedes procesar los datos y actualizar la página
+      const rows = data.split('\n');
+      rows.forEach(row => {
+        const columns = row.split(',');
+        // Aquí puedes usar columns[0], columns[1], etc. para acceder a los datos de cada fila
+        console.log(columns);
+        // Y aquí actualizas tu página con esos datos
+      });
+    })
+    .catch(error => console.error('Error al cargar los datos:', error));
+</script>
+
 </body>
 </html>
